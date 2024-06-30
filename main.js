@@ -4,7 +4,8 @@ function playGame() {
 
   function getComputerChoice() {
     const options = ["rock", "paper", "scissors"]
-    const computerChoice = options[Math.floor((Math.random() * 3))]
+    const randomNumber = Math.floor((Math.random() * 3))
+    const computerChoice = options[randomNumber]
 
     console.log(computerChoice)
     return computerChoice
