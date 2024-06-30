@@ -45,12 +45,13 @@ function playGame() {
           message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You tied :( ${humanChoice} is the same as ${computerChoice}.`
           alert(message)
         } else if (computerChoice === "rock") {
-          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You win! ${humanChoice} beats ${computerChoice} every time!`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You fool! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
+
           humanScore++
           alert(message)
         }
         else if (computerChoice === "paper") {
-          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You fool! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You win! ${humanChoice} beats ${computerChoice} every time!`
           computerScore++
           alert(message)
         }
