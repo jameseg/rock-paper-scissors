@@ -4,14 +4,15 @@ function playGame() {
 
   function getComputerChoice() {
     const options = ["rock", "paper", "scissors"]
-    const computerChoice = Math.floor((Math.random() * 3))
+    const computerChoice = options[Math.floor((Math.random() * 3))]
 
-    console.log(options[computerChoice])
-    return options[computerChoice]
+    console.log(computerChoice)
+    return computerChoice
   }
 
   function getHumanChoice() {
     const humanChoice = prompt("ROCK, PAPER, or SCISSORS?").toLowerCase()
+
     console.log(humanChoice)
     return humanChoice
 
@@ -24,49 +25,49 @@ function playGame() {
     switch (humanChoice) {
       case "rock":
         if (computerChoice === "scissors") {
-          message = `You win! ${humanChoice} beats ${computerChoice} every time!`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You win! ${humanChoice} beats ${computerChoice} every time!`
           humanScore++
-          console.log(message)
+          alert(message)
 
         } else if (computerChoice === "rock") {
-          message = `You tied :( ${humanChoice} is the same as ${computerChoice}.`
-          console.log(message)
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You tied :( ${humanChoice} is the same as ${computerChoice}.`
+          alert(message)
         }
         else if (computerChoice === "paper") {
-          message = `You lose! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You fool! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
           computerScore++
-          console.log(message)
+          alert(message)
         }
         break;
       case "scissors":
         if (computerChoice === "scissors") {
-          message = `You tied :( ${humanChoice} is the same as ${computerChoice}.`
-          console.log(message)
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You tied :( ${humanChoice} is the same as ${computerChoice}.`
+          alert(message)
         } else if (computerChoice === "rock") {
-          message = `You win! ${humanChoice} beats ${computerChoice} every time!`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You win! ${humanChoice} beats ${computerChoice} every time!`
           humanScore++
-          console.log(message)
+          alert(message)
         }
         else if (computerChoice === "paper") {
-          message = `You lose! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You fool! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
           computerScore++
-          console.log(message)
+          alert(message)
         }
         break;
 
       case "paper":
         if (computerChoice === "scissors") {
-          message = `You lose! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You fool! why would you pick ${humanChoice} if the computer picked ${computerChoice}?`
           computerScore++
-          console.log(message)
+          alert(message)
         } else if (computerChoice === "rock") {
-          message = `You win! ${humanChoice} beats ${computerChoice} every time!`
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You win! ${humanChoice} beats ${computerChoice} every time!`
           humanScore++
-          console.log(message)
+          alert(message)
         }
         else if (computerChoice === "paper") {
-          message = `You tied :( ${humanChoice} is the same as ${computerChoice}.`
-          console.log(message)
+          message = `YOU: ${humanChoice} | COMPUTER: ${computerChoice} You tied :( ${humanChoice} is the same as ${computerChoice}.`
+          alert(message)
         }
         break;
       default:
@@ -79,11 +80,11 @@ function playGame() {
   }
 
   if (humanScore > computerScore) {
-    console.log(`You win the game! You had ${humanScore} and the machine had ${computerScore} - Nice job!`)
+    alert(`You win the game! You had ${humanScore} and the machine had ${computerScore} - Nice job!`)
   } else if (computerScore > humanScore) {
-    console.log(`You got creamed. You had ${humanScore} and the machine had ${computerScore} - you need practice`)
+    alert(`You got creamed. You had ${humanScore} and the machine had ${computerScore} - you need practice`)
   } else {
-    console.log("You tied the machine. Maybe play again?")
+    alert("You tied the machine. Maybe play again?")
   }
 }
 
