@@ -7,17 +7,20 @@ function playGame() {
     const randomNumber = Math.floor((Math.random() * 3))
     const computerChoice = options[randomNumber]
 
-    console.log(computerChoice)
+    console.log("computerChoice: " + computerChoice)
     return computerChoice
   }
 
-  function getHumanChoice() {
-    const humanChoice = prompt("ROCK, PAPER, or SCISSORS?").toLowerCase()
+  const buttons = document.querySelectorAll("button")
 
-    console.log(humanChoice)
-    return humanChoice
+  buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      const humanChoice = e.target.textContent.toLowerCase()
+      console.log(humanChoice)
+      playRound(humanChoice, getComputerChoice())
+    })
 
-  }
+  });
 
   // rounds played from human's perspective
   function playRound(humanChoice, computerChoice) {
@@ -75,10 +78,6 @@ function playGame() {
       default:
         return new Error(`You need to select ROCK, PAPER, or SCISSORS | you selected: ${humanChoice}`)
     }
-  }
-
-  for (let i = 0; i < 5; i++) {
-    playRound(getHumanChoice(), getComputerChoice())
   }
 
   if (humanScore > computerScore) {
