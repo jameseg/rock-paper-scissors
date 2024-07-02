@@ -4,14 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="main.js" defer>
+  </script>
+  <link rel="stylesheet" href="./styles.css">
   <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-  <button>ROCK</button><button>PAPER</button><button>SCISSORS</button>
-  <script type="text/javascript" src="main.js">
-  </script>
+  <div class="buttons">
+    <button>ROCK</button><button>PAPER</button><button>SCISSORS</button>
+  </div>
 
+  <div class="results">
+    <div class="human-results">
+      <h4>Your current score: </h4>
+      <div class="human-score"></div>
+    </div>
+    <div class="ties-results">
+      <h4>Ties: </h4>
+      <div class="ties"></div>
+    </div>
+    <div class="computer-results">
+      <h4>The computer's current score: </h4>
+      <div class="computer-score">The computer's current score: </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <span>Click a button to start a game</span>
+    <div class="rules">First one to win 5 rounds wins the game!</div>
+  </div>
 </body>
 
 </html>
